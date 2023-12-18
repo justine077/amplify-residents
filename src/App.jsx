@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import RegistrationForm from "./pages/registrationForm";
 import Residents from "./pages/residents";
 import LoginPage from "./pages/login";
@@ -35,6 +35,8 @@ const App = () => {
           <Route path="resident-list-page" element={<RegistrationForm />} />
           <Route path="add-new-resident" element={<Residents />} />
         </Route>
+        {/* Default Admin Dashboard Route */}
+        <Route path="/admin" element={<Navigate to="/admin/dashboard" />} />
 
         {/* Resident pages */}
         <Route path="/resident-dashboard" element={<ResidentDashboard />} />

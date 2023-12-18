@@ -34,7 +34,11 @@ const ResidentForm = ({ formState, handleInputChange, addNewResident }) => {
             onChange={(event) => handleInputChange(event, key)}
             style={styles.input}
             value={value}
-            placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
+            placeholder={
+              key === "profileImage"
+                ? "Profile"
+                : key.charAt(0).toUpperCase() + key.slice(1)
+            }
           />
         ))}
         {error && <p style={{ color: "red" }}>{error}</p>}
